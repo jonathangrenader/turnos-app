@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPERADMIN
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          Role      @default(USER)
+  accounts      Account[]
+  sessions      Session[]
+  notifications Notification[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Cliente {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  telefono  String
+  email     String   @unique
+  turnos    Turno[]
+}
+
+model Servicio {
+  id                 Int      @id @default(autoincrement())
+  nombre             String
+  duracion           Int
+  precio             Float
+  comisionPorcentaje Float?
+  turnos             Turno[]
+  comisiones         ComisionEmpleadoServicio[]
+}
+
+model Empleado {
+  id            Int      @id @default(autoincrement())
+  nombre        String
+  horarios      HorarioEmpleado[]
+  turnos        Turno[]
+  comisiones    ComisionEmpleadoServicio[]
+}
+
+model HorarioEmpleado {
+  id          Int      @id @default(autoincrement())
+  empleadoId  Int
+  empleado    Empleado @relation(fields: [empleadoId], references: [id])
+  diaSemana   String // Ej: "Lunes", "Martes", etc.
+  horaInicio  String // Ej: "09:00"
+  horaFin     String // Ej: "18:00"
+}
+
+model Turno {
+  id         Int      @id @default(autoincrement())
+  fecha      String
+  hora       String
+  clienteId  Int
+  cliente    Cliente  @relation(fields: [clienteId], references: [id])
+  servicioId Int
+  servicio   Servicio @relation(fields: [servicioId], references: [id])
+  empleadoId Int
+  empleado   Empleado @relation(fields: [empleadoId], references: [id])
+}
+
+model BusinessSettings {
+  id            Int     @id @default(1)
+  nombreNegocio String?
+  direccion     String?
+  telefono      String?
+  emailContacto String?
+  horarioApertura String?
+  horarioCierre String?
+}
+
+model Gasto {
+  id          Int      @id @default(autoincrement())
+  descripcion String
+  monto       Float
+  fecha       String
+  categoria   String
+}
+
+model ComisionEmpleadoServicio {
+  id                 Int      @id @default(autoincrement())
+  empleadoId         Int
+  empleado           Empleado @relation(fields: [empleadoId], references: [id])
+  servicioId         Int
+  servicio           Servicio @relation(fields: [servicioId], references: [id])
+  porcentajeComision Float
+  @@unique([empleadoId, servicioId]) // Un empleado solo puede tener una comisión personalizada para un servicio dado
+}
