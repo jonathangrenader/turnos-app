@@ -100,7 +100,7 @@ const TurnoForm: React.FC<TurnoFormProps> = ({ turno, clientes, servicios, emple
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newTurno: Turno = {
       id: turno?.id || Date.now(),
