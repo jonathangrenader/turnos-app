@@ -49,7 +49,7 @@ const EmpleadoForm: React.FC<EmpleadoFormProps> = ({ empleado, onSave, onCancel 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newEmpleado: Empleado = {
-      id: empleado?.id, // Keep existing ID for updates
+      ...(empleado && { id: empleado.id }), // Only include id if updating an existing employee
       nombre,
       horarios: horarios.map(h => ({
         ...h,
