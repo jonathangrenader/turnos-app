@@ -3,8 +3,8 @@ import { Turno } from './Turno';
 import { ComisionEmpleadoServicio } from './ComisionEmpleadoServicio';
 
 export interface HorarioEmpleado {
-  id: number;
-  empleadoId: number;
+  id?: number;
+  empleadoId?: number;
   diaSemana: string;
   horaInicio: string;
   horaFin: string;
