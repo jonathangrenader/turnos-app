@@ -199,7 +199,7 @@ const TurnosPage = () => {
             >
               <option value="">Todos los Clientes</option>
               {clientes.map(cliente => (
-                <option key={cliente.id} value={cliente.id}>
+                <option key={cliente.id!} value={cliente.id!}>
                   {cliente.nombre}
                 </option>
               ))}
@@ -212,7 +212,7 @@ const TurnosPage = () => {
             >
               <option value="">Todos los Servicios</option>
               {servicios.map(servicio => (
-                <option key={servicio.id} value={servicio.id}>
+                <option key={servicio.id!} value={servicio.id!}>
                   {servicio.nombre}
                 </option>
               ))}
