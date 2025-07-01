@@ -11,7 +11,7 @@ export interface HorarioEmpleado {
 }
 
 export interface Empleado {
-  id: number;
+  id?: number;
   nombre: string;
   horarios?: HorarioEmpleado[];
   turnos?: Turno[];
