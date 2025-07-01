@@ -1,1 +1,1 @@
-Fix: Filter undefined IDs in select options in app/turnos/page.tsx
+Fix: Handle optional empleado.id in handleDeleteEmpleado call in app/empleados/page.tsx

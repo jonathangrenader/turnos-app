@@ -159,7 +159,7 @@ const ServiciosPage = () => {
                 <td>{servicio.nombre}</td>
                 <td>{servicio.duracion}</td>
                 <td>{servicio.precio}</td>
-                <td>{(servicio.comisionPorcentaje * 100).toFixed(0)}%</td>
+                <td>{((servicio.comisionPorcentaje || 0) * 100).toFixed(0)}%</td>
                 <td>
                   {servicio.comisiones && servicio.comisiones.length > 0 ? (
                     <ul>
