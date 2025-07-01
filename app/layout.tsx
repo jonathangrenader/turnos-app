@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./globals.css";
-import ClientLayoutWrapper from "./components/ClientLayoutWrapper";
-import BootstrapClient from "./components/BootstrapClient";
-import { SessionProvider } from "next-auth/react";
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: "Gestor de Turnos",
@@ -19,11 +14,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <SessionProvider>
+        <Providers>
           <ClientLayoutWrapper>
             {children}
           </ClientLayoutWrapper>
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   );

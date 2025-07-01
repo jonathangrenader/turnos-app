@@ -1,1 +1,1 @@
-Fix: Extend NextAuth User interface with role property
+Fix: Add id to Session.user interface and correct type assertion in NextAuth config
