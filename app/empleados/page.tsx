@@ -173,7 +173,7 @@ const EmpleadosPage = () => {
                   </button>
                   <button
                     className="btn btn-sm btn-danger"
-                    onClick={() => handleDeleteEmpleado(empleado.id)}
+                    onClick={() => handleDeleteEmpleado(empleado.id!)}
                   >
                     Eliminar
                   </button>
