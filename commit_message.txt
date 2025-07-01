@@ -1,1 +1,1 @@
-Fix: Re-add CSS imports to app/layout.tsx for styling
+Fix: Change Prisma datasource provider to postgresql in schema.prisma
