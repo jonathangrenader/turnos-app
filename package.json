@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate && prisma migrate deploy",
+    "postinstall": "prisma generate",
     "seed": "ts-node --transpile-only prisma/seed.ts",
     "seed:build": "tsc --project tsconfig.seed.json",
     "seed:run": "node dist/seed.js"
