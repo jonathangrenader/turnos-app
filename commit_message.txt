@@ -1,1 +1,1 @@
-Fix: Import Metadata type in app/layout.tsx
+Fix: Re-add CSS imports to app/layout.tsx for styling
