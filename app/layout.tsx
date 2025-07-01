@@ -1,4 +1,5 @@
 import { Providers } from './providers';
+import ClientLayoutWrapper from "./components/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Gestor de Turnos",

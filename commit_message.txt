@@ -1,1 +1,1 @@
-Fix: Add id to Session.user interface and correct type assertion in NextAuth config
+Fix: React Context unavailable in Server Components by moving providers to client component
