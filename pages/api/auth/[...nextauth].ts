@@ -25,7 +25,7 @@ export default NextAuth({
         });
 
         if (user && user.password && await bcrypt.compare(credentials.password, user.password)) {
-          return { id: user.id, name: user.name, email: user.email, role: user.role };
+          return { id: String(user.id), name: user.name, email: user.email, role: user.role };
         }
         
         return null;

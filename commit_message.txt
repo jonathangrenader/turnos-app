@@ -1,1 +1,1 @@
-Fix: Add req parameter to authorize function in NextAuth config
+Fix: Explicitly type authorize return as Promise<User | null> in NextAuth config
