@@ -1,1 +1,1 @@
-Fix: Remove explicit undefined for empleadoId in EmpleadoForm.tsx
+Fix: Make id optional in Empleado interface
