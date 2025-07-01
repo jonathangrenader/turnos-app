@@ -1,1 +1,1 @@
-Fix: Handle optional IDs for cliente.id and servicio.id in app/turnos/page.tsx
+Fix: Filter comparisons in app/turnos/page.tsx to handle empty string values
