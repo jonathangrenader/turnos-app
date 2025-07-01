@@ -1,1 +1,1 @@
-Fix: Convert user.id to string in NextAuth authorize callback
+Fix: Extend NextAuth User interface with role property
