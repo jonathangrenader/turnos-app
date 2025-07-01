@@ -1,1 +1,1 @@
-Fix: Handle optional comisionPorcentaje in app/servicios/page.tsx
+Fix: Handle optional servicio.id in handleDeleteServicio call in app/servicios/page.tsx
