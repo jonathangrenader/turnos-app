@@ -1,1 +1,1 @@
-Fix: React Context unavailable in Server Components by moving providers to client component
+Fix: Import ClientLayoutWrapper in app/layout.tsx
