@@ -2,7 +2,7 @@
 import { ComisionEmpleadoServicio } from './ComisionEmpleadoServicio';
 
 export interface Servicio {
-  id: number;
+  id?: number;
   nombre: string;
   duracion: number; // en minutos
   precio: number;

@@ -1,1 +1,1 @@
-Fix: Make id optional in Empleado interface
+Fix: Handle optional h.id in EmpleadoForm.tsx comparison

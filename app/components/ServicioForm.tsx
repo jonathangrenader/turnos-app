@@ -73,15 +73,15 @@ const ServicioForm: React.FC<ServicioFormProps> = ({ servicio, onSave, onCancel 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newServicio: Servicio = {
-      id: servicio?.id, // Keep existing ID for updates
+      ...(servicio && { id: servicio.id }), // Only include id if updating an existing service
       nombre,
       duracion: Number(duracion),
       precio: Number(precio),
       comisionPorcentaje: Number(comisionPorcentaje),
       comisiones: comisiones.map(c => ({
         ...c,
-        id: c.id < 1000000000000 ? undefined : c.id, // Remove temporary IDs for new entries, keep existing ones
-        servicioId: undefined // servicioId is set by the API
+        id: (typeof c.id === 'number' && c.id < 1000000000000) ? undefined : c.id, // Remove temporary IDs for new entries, keep existing ones
+        // servicioId is set by the API, so we don't include it here
       })),
     };
     onSave(newServicio);
