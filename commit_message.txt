@@ -1,1 +1,1 @@
-Fix: Handle optional servicio.id in handleDeleteServicio call in app/servicios/page.tsx
+Fix: Add req parameter to authorize function in NextAuth config
