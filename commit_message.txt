@@ -1,1 +1,1 @@
-Fix: Filter comparisons in app/turnos/page.tsx to handle empty string values
+Fix: Type assertion for filter IDs in app/turnos/page.tsx

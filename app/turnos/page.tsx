@@ -185,7 +185,7 @@ const TurnosPage = () => {
               style={{ flex: '1 1 auto' }}
             >
               <option value="">Todos los Empleados</option>
-              {empleados.map(empleado => (
+              {empleados.filter(empleado => empleado.id !== undefined).map(empleado => (
                 <option key={empleado.id!} value={empleado.id!}>
                   {empleado.nombre}
                 </option>
@@ -198,7 +198,7 @@ const TurnosPage = () => {
               style={{ flex: '1 1 auto' }}
             >
               <option value="">Todos los Clientes</option>
-              {clientes.map(cliente => (
+              {clientes.filter(cliente => cliente.id !== undefined).map(cliente => (
                 <option key={cliente.id!} value={cliente.id!}>
                   {cliente.nombre}
                 </option>
@@ -211,7 +211,7 @@ const TurnosPage = () => {
               style={{ flex: '1 1 auto' }}
             >
               <option value="">Todos los Servicios</option>
-              {servicios.map(servicio => (
+              {servicios.filter(servicio => servicio.id !== undefined).map(servicio => (
                 <option key={servicio.id!} value={servicio.id!}>
                   {servicio.nombre}
                 </option>
