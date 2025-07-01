@@ -105,15 +105,15 @@ const TurnosPage = () => {
     let filtered = turnos;
 
     if (filterEmpleadoId !== '') {
-      filtered = filtered.filter(turno => turno.empleadoId === filterEmpleadoId);
+      filtered = filtered.filter(turno => turno.empleadoId === (filterEmpleadoId as number));
     }
 
     if (filterClienteId !== '') {
-      filtered = filtered.filter(turno => turno.clienteId === filterClienteId);
+      filtered = filtered.filter(turno => turno.clienteId === (filterClienteId as number));
     }
 
     if (filterServicioId !== '') {
-      filtered = filtered.filter(turno => turno.servicioId === filterServicioId);
+      filtered = filtered.filter(turno => turno.servicioId === (filterServicioId as number));
     }
 
     if (filterStartDate) {
