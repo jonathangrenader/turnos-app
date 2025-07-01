@@ -54,7 +54,7 @@ const EmpleadoForm: React.FC<EmpleadoFormProps> = ({ empleado, onSave, onCancel 
       horarios: horarios.map(h => ({
         ...h,
         id: h.id < 1000000000000 ? undefined : h.id, // Remove temporary IDs for new entries, keep existing ones
-        empleadoId: undefined // empleadoId is set by the API
+        // empleadoId is set by the API, so we don't include it here
       })),
     };
     onSave(newEmpleado);
