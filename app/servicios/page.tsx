@@ -180,7 +180,7 @@ const ServiciosPage = () => {
                   </button>
                   <button
                     className="btn btn-sm btn-danger"
-                    onClick={() => handleDeleteServicio(servicio.id)}
+                    onClick={() => handleDeleteServicio(servicio.id!)}
                   >
                     Eliminar
                   </button>
