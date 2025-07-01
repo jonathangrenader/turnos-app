@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
 import { Providers } from './providers';
 import ClientLayoutWrapper from "./components/ClientLayoutWrapper";
 
