@@ -1,1 +1,1 @@
-Fix: Handle optional empleado.id in app/turnos/page.tsx
+Fix: Handle optional IDs for cliente.id and servicio.id in app/turnos/page.tsx

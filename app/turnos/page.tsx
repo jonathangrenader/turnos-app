@@ -104,15 +104,15 @@ const TurnosPage = () => {
   const filteredTurnos = useMemo(() => {
     let filtered = turnos;
 
-    if (filterEmpleadoId) {
+    if (filterEmpleadoId !== '') {
       filtered = filtered.filter(turno => turno.empleadoId === filterEmpleadoId);
     }
 
-    if (filterClienteId) {
+    if (filterClienteId !== '') {
       filtered = filtered.filter(turno => turno.clienteId === filterClienteId);
     }
 
-    if (filterServicioId) {
+    if (filterServicioId !== '') {
       filtered = filtered.filter(turno => turno.servicioId === filterServicioId);
     }
 
