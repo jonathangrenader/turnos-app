@@ -1,1 +1,1 @@
-Fix: Change Prisma datasource provider to postgresql in schema.prisma
+Fix: Force SSL in postinstall script and revert schema changes
